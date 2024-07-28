@@ -1,25 +1,23 @@
-import { useState } from 'react';
-import './App.css';
-import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from './consts.js';
+import Character from "./pages/Character";
+import { CharacterProvider } from "./context/CharacterContext";
+import "./index.css";
 
-
-function App() {
-  const [num, setNum] = useState(0);
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Coding Exercise</h1>
-      </header>
-      <section className="App-section">
-        <div>
-          Value:
-          {num}
-          <button>+</button>
-          <button>-</button>
-        </div>
-      </section>
-    </div>
+    <>
+      <div className="container mx-auto">
+        <div className="bg-gradient-to-r from-slate-100 to-slate-50 rounded p-4 my-3">
+          <h1 className="text-3xl font-light text-Slate-50 py-3">
+            <span className="font-bold">React Coding Exercise</span> - Ruwan
+            Jayawardena
+          </h1>
+        </div>       
+        <CharacterProvider>
+            <Character />
+        </CharacterProvider>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
